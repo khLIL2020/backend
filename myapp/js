@@ -1,0 +1,35 @@
+if (day1===6)
+
+{
+  router.get('/', function(req, res) {
+    res.render('users');
+  });
+  router.get('/Contact', function(req, res) {
+    res.render('users');
+  });
+  router.get('/Service', function(req, res) {
+    res.render('users');
+  })
+
+
+  
+  
+  }
+
+if (day1===0)
+
+{
+  router.get('/', function(req, res) {
+    res.render('users');
+  });
+  router.get('/Contact', function(req, res) {
+    res.render('users');
+  });
+  router.get('/Service', function(req, res) {
+    res.render('users');
+  })
+
+
+  
+  
+  }

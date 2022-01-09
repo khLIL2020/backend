@@ -1,0 +1,30 @@
+
+var express = require('express');
+var mongoose = require("mongoose");
+var app = express();
+require("dotenv").config();
+const uri = process.env.ATLAS_URI;
+mongoose.connect(process.env.ATLAS_URI);
+const router=express.Router();
+const Person = require('./Person');
+
+
+
+mongoose.connect(uri);
+const connection = mongoose.connection;
+connection.once("open",()=>{
+console.log ("Connected Database Successfully") ;
+});
+
+router.post('/',(req,res,next)=>{
+  
+     const person=new Person({
+         name:req.body.name,
+         price:req.body.price,
+     }); 
+     person.save().then(result=>console.log(result)});
+});
+
+app.listen(3000,function(req,res){
+console. log ("Server is started on port 3000");
+})
